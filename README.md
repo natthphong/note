@@ -1,4 +1,5 @@
-#KUBE COMMAND
+#KUBE COMMAND<br>
+minikube -n {namspace} service {servicename} --url #to access inside kube <br>
 kubectl create namespace {namespace} <br>
 kubectl get namespace <br>
 kubectl create -f {file component} <br>
