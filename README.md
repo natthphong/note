@@ -136,3 +136,26 @@ sudo groupadd docker
  sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
 sudo chmod g+rwx "/home/$USER/.docker" -R
 
+
+#nexus
+
+apt-get update -y
+
+echo "Install Java"
+apt-get install openjdk-8-jdk -y
+java -version
+
+echo "Install Nexus"
+useradd -M -d /opt/nexus -s /bin/bash -r nexus
+echo "nexus ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/nexus
+mkdir /opt/nexus
+wget https://sonatype-download.global.ssl.fastly.net/repository/downloads-prod-group/3/nexus-3.29.2-02-unix.tar.gz
+tar xzf nexus-3.29.2-02-unix.tar.gz -C /opt/nexus --strip-components=1
+chown -R nexus:nexus /opt/nexus
+
+vi /opt/nexus/bin/nexus.vmoptions  แก้ .. to .
+vi /opt/nexus/bin/nexus.rc  uncoment และ run nexus
+
+sudo -u nexus /opt/nexus/bin/nexus start
+
+
