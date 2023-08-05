@@ -1,4 +1,6 @@
 #KUBE COMMAND<br>
+kubectl run nginx --image=nginx --restart=Never <br>
+minikube addons enable ingress  <br>
 minikube -n {namspace} service {servicename} --url #to access inside kube <br>
 kubectl create namespace {namespace} <br>
 kubectl get namespace <br>
