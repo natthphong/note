@@ -1,4 +1,5 @@
 #KUBE COMMAND<br>
+minikube tunnel<br>
 kubectl run nginx --image=nginx --restart=Never <br>
 minikube addons enable ingress  <br>
 minikube -n {namspace} service {servicename} --url #to access inside kube <br>
@@ -139,19 +140,19 @@ sudo chmod g+rwx "/home/$USER/.docker" -R
 
 #nexus
 
-apt-get update -y
+apt-get update -y<br>
 
-echo "Install Java"
-apt-get install openjdk-8-jdk -y
-java -version
+echo "Install Java"<br>
+apt-get install openjdk-8-jdk -y<br>
+java -version<br>
 
-echo "Install Nexus"
-useradd -M -d /opt/nexus -s /bin/bash -r nexus
-echo "nexus ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/nexus
-mkdir /opt/nexus
+echo "Install Nexus"<br>
+useradd -M -d /opt/nexus -s /bin/bash -r nexus<br>
+echo "nexus ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/nexus<br>
+mkdir /opt/nexus<br>
 wget https://sonatype-download.global.ssl.fastly.net/repository/downloads-prod-group/3/nexus-3.29.2-02-unix.tar.gz
-tar xzf nexus-3.29.2-02-unix.tar.gz -C /opt/nexus --strip-components=1
-chown -R nexus:nexus /opt/nexus
+tar xzf nexus-3.29.2-02-unix.tar.gz -C /opt/nexus --strip-components=1<br>
+chown -R nexus:nexus /opt/nexus<br>
 
 vi /opt/nexus/bin/nexus.vmoptions  แก้ .. to .
 vi /opt/nexus/bin/nexus.rc  uncoment และ run nexus
